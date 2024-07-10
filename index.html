@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Fugir para Sul - Rota de fuga</title>
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&amp;family=Outfit:wght@300;400&amp;display=swap">
+    <link rel="stylesheet" href="css/plugins.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader-bg"></div>
+    <div id="preloader">
+        <div id="preloader-status">
+            <div class="preloader-position loader"> <span></span> </div>
+        </div>
+    </div>
+    <!-- Progress scroll totop -->
+    <div class="progress-wrap cursor-pointer">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+    <!-- Menu -->
+    <div class="fugir-wrap">
+        <div class="fugir-wrap-inner">
+            <nav class="fugir-menu">
+                <ul>
+                    <li><a href="#" data-scroll-nav="0">Inicio</a></li>
+                    <li><a href="#" data-scroll-nav="1">Sobre</a></li>
+                    <li><a href="#" data-scroll-nav="2">Casas</a></li>
+                    <li><a href="#" data-scroll-nav="3">Comodidades</a></li>
+                    <li><a href="#" data-scroll-nav="4">Serviços</a></li>
+                    <li><a href="#" data-scroll-nav="5">Noticias</a></li>
+                    <li><a href="#" data-scroll-nav="6">Contactos</a></li>
+                </ul>
+            </nav>
+            <div class="fugir-menu-footer">
+                <div class="reservation">
+                    <a href="tel:8551004444">
+                        <div class="icon d-flex justify-content-center align-items-center">
+                            <i class="flaticon-call"></i>
+                        </div>
+                        <div class="call">Reservas<br><span>933 333 333</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Logo & Menu Burger -->
+    <div class="fugir-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Menu Burger -->
+                <div class="col-3 col-md-1 text-right fugir-wrap-burger-wrap">
+                    <a href="#" class="fugir-nav-toggle fugir-js-fugir-nav-toggle"><i></i></a>
+                </div>
+                <!-- Logo -->
+                <div class="col-6 col-md-10 text-center fugir-logo-wrap">
+                    <a href="index.html" class="fugir-logo"><img
+                            src="images/logos/PNG - OTHER VERSION OF COLOR/HORIZONTAL LOGO/Horizontal logo - white color@3x.png"
+                            alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Parallax Image -->
+    <div id="home" class="banner-header full-height section-padding valign bg-img bg-fixed" data-overlay-dark="4"
+        data-background="images/e55c0975-f13d-47af-a8f3-083f934281b7.webp" data-scroll-index="0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-12 text-center">
+                    <span>
+                        <i class="star-rating"></i>
+                        <i class="star-rating"></i>
+                        <i class="star-rating"></i>
+                        <i class="star-rating"></i>
+                        <i class="star-rating"></i>
+                    </span>
+                    <h4>Fugir para Sul</h4>
+                    <h1>Uma rota de fuga para te encontrares</h1>
+                    <div class="butn-light mt-30 mb-30"> <a href="#about"><span>Explorar Mais</span></a> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Booking Search -->
+    <div class="booking-wrapper">
+        <div class="container">
+            <div class="booking-inner clearfix">
+                <form action="#" class="form1 clearfix">
+                    <div class="col1 c1">
+                        <div class="input1_wrapper border-l border-b border-t border-r">
+                            <label>Check in</label>
+                            <div class="input1_inner">
+                                <input type="text" class="form-control input datepicker" placeholder="Check in">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col1 c2">
+                        <div class="input1_wrapper border-l border-b border-t border-r">
+                            <label>Check out</label>
+                            <div class="input1_inner">
+                                <input type="text" class="form-control input datepicker" placeholder="Check out">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col2 c3">
+                        <div class="select1_wrapper border-l border-b border-t border-r">
+                            <label>Adultos</label>
+                            <div class="select1_inner">
+                                <select class="select2 select" style="width: 100%">
+                                    <option value="1">1 Adulto</option>
+                                    <option value="2">2 Adultos</option>
+                                    <option value="3">3 Adultos</option>
+                                    <option value="4">4 Adultos</option>
+                                    <option value="5">5 Adultos</option>
+                                    <option value="6">6 Adultos</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col2 c4">
+                        <div class="select1_wrapper border-l border-b border-t  border-r">
+                            <label>Crianças</label>
+                            <div class="select1_inner">
+                                <select class="select2 select" style="width: 100%">
+                                    <option value="1">S/ Crianças</option>
+                                    <option value="1">1 Criança</option>
+                                    <option value="2">2 Crianças</option>
+                                    <option value="3">3 Crianças</option>
+                                    <option value="4">4 Crianças</option>
+                                    <option value="5">5 Crianças</option>
+                                    <option value="6">6 Crianças</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col2 c5">
+                        <div class="select1_wrapper border-l border-b border-t  border-r">
+                            <label>Casas</label>
+                            <div class="select1_inner">
+                                <select class="select2 select" style="width: 100%">
+                                    <option value="1">Porto Côvo</option>
+                                    <option value="2">Setúbal</option>
+                                    <option value="3">Cercal do Alentejo</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col3 c6">
+                        <button type="submit" class="btn-form1-submit">Check Now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- About -->
+    <section id="about" class="about section-padding bg-white" data-scroll-index="1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="sub-title border-bot-light">Bem-vindo</div>
+                </div>
+                <div class="col-md-9">
+                    <div class="section-title">Fugir para Sul</div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12">
+                            <p>Fugir para Sul offers a route towards South
+                                in 4 different destinations & 4 different
+                                homes.</p>
+                            <p>All accommodations are designed
+                                with personality and taste, set in premium
+                                locations and easily accessible.</p>
+                            <p>Fugir para
+                                Sul designed them so that their guests
+                                would “feel at home straight away”, including
+                                details that are part of the life of the
+                                homeowners</p>
+                            <!-- Rating -->
+                            <div class="ratting-point mt-30 mb-30">
+                                <div class="features-ratting">
+                                    <h3>4.81</h3>
+                                </div>
+                                <div class="features-caption">
+                                    <h3>Rating baseado nos 150+ reviews</h3>
+                                    <div class="rating"> <span>
+                                            <i class="star-rating"></i>
+                                            <i class="star-rating"></i>
+                                            <i class="star-rating"></i>
+                                            <i class="star-rating"></i>
+                                            <i class="star-rating"></i>
+                                        </span> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="row g-3">
+                                <div class="col-6 text-end"> <img class="img-fluid rounded w-75 wow zoomIn"
+                                        data-wow-delay="0.1s"
+                                        src="images/alentejo/0202b118-9406-40b1-99de-bd10d6505f8a.webp"
+                                        style="margin-top: 25%;"> </div>
+                                <div class="col-6 text-start"> <img class="img-fluid rounded w-100 wow zoomIn"
+                                        data-wow-delay="0.3s"
+                                        src="images/alentejo/22e88161-88e0-400e-8041-0ba818cdf3a3.webp"> </div>
+                                <div class="col-6 text-end"> <img class="img-fluid rounded w-50 wow zoomIn"
+                                        data-wow-delay="0.5s"
+                                        src="images/portocovo/22bdb8ce-7a33-4ced-baa0-b2dec2a68567.webp"> </div>
+                                <div class="col-6 text-start"> <img class="img-fluid rounded w-75 wow zoomIn"
+                                        data-wow-delay="0.7s"
+                                        src="images/portocovo/e55c0975-f13d-47af-a8f3-083f934281b7 (2).webp"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Rooms -->
+    <section id="rooms" class="rooms1 section-padding" data-scroll-index="2">
+        <div class="container">
+            <div class="row mb-30">
+                <div class="col-md-3">
+                    <div class="sub-title border-bot-light">Descobrir</div>
+                </div>
+                <div class="col-md-9">
+                    <div class="section-title">Casas <span>&amp;</span> Apartamentos</div>
+                    <p>Fugir para Sul provides a journey to the South with four distinct destinations and four unique
+                        homes. Each accommodation
+                        is thoughtfully designed with character and style, situated in prime locations and easily
+                        reachable. </p>
+                    <button onclick="findClosestHouse()">Find the Closest House</button>
+                </div>
+            </div>
+            <div class="rooms1-carousel owl-theme owl-carousel">
+                <!-- Cercal do Alentejo -->
+                <div class="rooms1-single" data-lat="37.833" data-lng="-8.670">
+                    <div class="rooms1-img"> <img src="images/cercalpng.png" alt=""> </div>
+                    <div class="rooms1-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="rooms1-title"><a href="#">Ecletic Monte Laginha</a></div>
+                                <div class="rooms1-tagline">Cercal do Alentejo</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="book">
+                                    <div><a href="room-details.html" class="butn-dark2"><span>Reserve</span></a></div>
+                                    <div><span>desde</span><span class="price">202€</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Setúbal -->
+                <div class="rooms1-single" data-lat="38.524" data-lng="-8.892">
+                    <div class="rooms1-img"> <img src="images/setubalpng.png" alt=""> </div>
+                    <div class="rooms1-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="rooms1-title"><a href="#">Casa de Praia Vitoriana</a></div>
+                                <div class="rooms1-tagline">Setúbal</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="book">
+                                    <div><a href="room-details.html" class="butn-dark2"><span>Reserve</span></a></div>
+                                    <div><span>desde</span><span class="price">190€</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sines -->
+                <div class="rooms1-single" data-lat="37.960" data-lng="-8.868">
+                    <div class="rooms1-img"> <img src="images/alentejopng.png" alt=""> </div>
+                    <div class="rooms1-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="rooms1-title"><a href="#">Casa de Praia Alentejana</a></div>
+                                <div class="rooms1-tagline">Sines</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="book">
+                                    <div><a href="room-details.html" class="butn-dark2"><span>Reserve</span></a></div>
+                                    <div><span>desde</span><span class="price">175€</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Promo Video -->
+    <section class="video-wrapper video section-padding bg-img bg-fixed" data-overlay-dark="5"
+        data-background="images/setubalpng.png">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-12 text-center">
+                    <span><i class="star-rating"></i><i class="star-rating"></i><i class="star-rating"></i><i
+                            class="star-rating"></i><i class="star-rating"></i></span>
+                    <div class="section-subtitle"><span>Fugir para Sul</span></div>
+                    <div class="section-title"><span>Video promocional das propriedades</span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-center col-md-12">
+                    <a class="vid" href="https://youtu.be/QTwg1l8FqXw">
+                        <div class="vid-butn"> <span class="icon">
+                                <i class="ti-control-play"></i>
+                            </span> </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Amenities -->
+    <section id="amenities" class="amenities section-padding" data-scroll-index="3">
+        <div class="container">
+            <div class="row mb-30">
+                <div class="col-md-3">
+                    <div class="sub-title border-bot-light">Comodidades</div>
+                </div>
+                <div class="col-md-9">
+                    <div class="section-title">Comodidades das casas</div>
+                    <p>Enjoy a range of exceptional amenities designed for your comfort and convenience. Experience
+                        unmatched hospitality and
+                        thoughtful services during your stay.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item"> <span class="number">01</span>
+                            <div class="icon"><i class="flaticon-world"></i></div>
+                            <h5><a>Check-in Autónomo</a></h5>
+                            <p>Check-in autónomo com o cofre de chaves sempre pronto.</p>
+                        </div>
+                        <div class="item"> <span class="number">02</span>
+                            <div class="icon"><i class="flaticon-car"></i></div>
+                            <h5><a>Estacionamento</a></h5>
+                            <p>Estacionamento gratuito em algumas das instalações.</p>
+                        </div>
+                        <div class="item"> <span class="number">03</span>
+                            <div class="icon"><i class="flaticon-bed"></i></div>
+                            <h5><a>Serviços</a></h5>
+                            <p>Suspendisse vitae efficitur orci, nec sagittis quam. Duis eget porta nisl, et porttitor
+                                justo.</p>
+                        </div>
+                        <div class="item"> <span class="number">04</span>
+                            <div class="icon"><i class="flaticon-swimming"></i></div>
+                            <h5><a>Piscina Privada</a></h5>
+                            <p>Disponível durante todo o ano, disponível 24 horas em algumas das instalações.</p>
+                        </div>
+                        <div class="item"> <span class="number">05</span>
+                            <div class="icon"><i class="flaticon-wifi"></i></div>
+                            <h5><a>Wi-Fi Rápido</a></h5>
+                            <p>Com até 240 Mbps, pode fazer videochamadas e transmitir vídeos.</p>
+                        </div>
+                        <div class="item"> <span class="number">06</span>
+                            <div class="icon"><i class="flaticon-breakfast"></i></div>
+                            <h5><a>Utensílios</a></h5>
+                            <p>Utensílios básicos de cozinha incluindo pratos e talheres para criança.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testiominals -->
+    <section class="testimonials">
+        <div class="background bg-img bg-fixed section-padding pb-0"
+            data-background="images/a574d09b-c5d6-4adb-bcfa-708ee794e753.jpg" data-overlay-dark="4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3 class="sub-title border-bot-dark">Testemunhos</h3>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="section-title whte">O que dizem os hóspedes?</div>
+                        <div class="testimonials-box">
+                            <div class="owl-carousel owl-theme">
+                                <div class="item"> <span>
+                                        <i class="star-rating"></i>
+                                        <i class="star-rating"></i>
+                                        <i class="star-rating"></i>
+                                        <i class="star-rating"></i>
+                                        <i class="star-rating"></i>
+                                    </span>
+                                    <h5>"O espaço da Andreia é o lugar perfeito para descobrir Sétubal e os seus
+                                        arredores. O apartamento tem muito charme e é
+                                        muito espaçoso. Ideal para uma família. Ideal para viver os átomos especiais de
+                                        Sétubal, passar por trabalhadores em
+                                        derretimento e centro da cidade burguesa. A natureza circundante é muito bonita
+                                        e de fácil acesso, seja de barco ou
+                                        pelos diferentes autocarros da metrópole."</h5>
+                                    <div class="info">
+                                        <div class="author-img"> <img src="images/3.webp" alt=""> </div>
+                                        <div class="cont">
+                                            <h6>Marc</h6> <span>Em AirBnb - Casa de praia Vitoriana</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item"> <span>
+                                        <i class="star-rating"></i>
+                                        <i class="star-rating"></i>
+                                        <i class="star-rating"></i>
+                                        <i class="star-rating"></i>
+                                        <i class="star-rating"></i>
+                                    </span>
+                                    <h5>"Great space for events. They were able to cater to the event I was working
+                                        while simultaneously having an event and a wedding on separate floors. Hotel is
+                                        massive. Employees are very friendly and always willing to help if need be. Will
+                                        definitely be having more events here in the future."</h5>
+                                    <div class="info">
+                                        <div class="author-img"> <img src="images/3.jpg" alt=""> </div>
+                                        <div class="cont">
+                                            <h6>Ray Smith</h6> <span>Customer Review</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services -->
+    <section id="services" class="services section-padding" data-scroll-index="4">
+        <div class="container">
+            <div class="row mb-30">
+                <div class="col-md-3">
+                    <div class="sub-title border-bot-light">Serviços</div>
+                </div>
+                <div class="col-md-9">
+                    <div class="section-title">Atividades nos arredores</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum felis. Nam eleifend
+                        ultricies metus, sed
+                        consectetur lectus dapibus porttitor. Donec vitae risus aliquet, dapibus enim dictum, vestibulum
+                        turpis.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="item">
+                        <div class="item-wrap">
+                            <div class="img"> <img src="images/1_1.jpg" alt=""> </div>
+                            <div class="con">
+                                <div class="title-box">
+                                    <h3><a href="#">Restaurantes &amp; Bares</a></h3>
+                                </div>
+                                <div class="arrow"> <a href="#"><span class="ti-arrow-right"></span></a> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="item">
+                        <div class="item-wrap">
+                            <div class="img"> <img src="images/2.jpg" alt=""> </div>
+                            <div class="con">
+                                <div class="title-box">
+                                    <h3><a href="#">Spa &amp; Bem-estar</a></h3>
+                                </div>
+                                <div class="arrow"> <a href="#"><span class="ti-arrow-right"></span></a> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="item">
+                        <div class="item-wrap">
+                            <div class="img"> <img src="images/5.jpg" alt=""> </div>
+                            <div class="con">
+                                <div class="title-box">
+                                    <h3><a href="#">Eventos &amp; Meetings</a></h3>
+                                </div>
+                                <div class="arrow"> <a href="#"><span class="ti-arrow-right"></span></a> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Booking Search -->
+    <section class="section-padding bg-img bg-fixed" data-overlay-dark="3" data-background="images/setubalpng.png">
+        <div class="container">
+            <div class="booking-inner clearfix">
+                <form action="#" class="form1 clearfix">
+                    <div class="col1 c1">
+                        <div class="input1_wrapper border-l border-b border-t border-r">
+                            <label>Check in</label>
+                            <div class="input1_inner">
+                                <input type="text" class="form-control input datepicker" placeholder="Check in">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col1 c2">
+                        <div class="input1_wrapper border-l border-b border-t border-r">
+                            <label>Check out</label>
+                            <div class="input1_inner">
+                                <input type="text" class="form-control input datepicker" placeholder="Check out">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col2 c3">
+                        <div class="select1_wrapper border-l border-b border-t border-r">
+                            <label>Adultos</label>
+                            <div class="select1_inner">
+                                <select class="select2 select" style="width: 100%">
+                                    <option value="1">1 Adulto</option>
+                                    <option value="2">2 Adultos</option>
+                                    <option value="3">3 Adultos</option>
+                                    <option value="4">4 Adultos</option>
+                                    <option value="5">5 Adultos</option>
+                                    <option value="6">6 Adultos</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col2 c4">
+                        <div class="select1_wrapper border-l border-b border-t  border-r">
+                            <label>Crianças</label>
+                            <div class="select1_inner">
+                                <select class="select2 select" style="width: 100%">
+                                    <option value="1">S/ Crianças</option>
+                                    <option value="1">1 Criança</option>
+                                    <option value="2">2 Crianças</option>
+                                    <option value="3">3 Crianças</option>
+                                    <option value="4">4 Crianças</option>
+                                    <option value="5">5 Crianças</option>
+                                    <option value="6">6 Crianças</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col2 c5">
+                        <div class="select1_wrapper border-l border-b border-t  border-r">
+                            <label>Casas</label>
+                            <div class="select1_inner">
+                                <select class="select2 select" style="width: 100%">
+                                    <option value="1">Porto Côvo</option>
+                                    <option value="2">Setúbal</option>
+                                    <option value="3">Cercal do Alentejo</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col3 c6">
+                        <button type="submit" class="btn-form1-submit">Check Now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Home -->
+    <section id="blog" class="blog-home section-padding" data-scroll-index="5">
+        <div class="container">
+            <div class="row mb-30">
+                <div class="col-md-3">
+                    <div class="sub-title border-bot-light">Noticias</div>
+                </div>
+                <div class="col-md-9">
+                    <div class="section-title">Novidades mais recentes</div>
+                    <p>Etiam ante risus, lobortis vitae purus id, iaculis gravida arcu. Suspendisse fermentum nec mi vel
+                        condimentum. Nullam
+                        nec mi ullamcorper, sodales quam quis, euismod augue.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item bg-img" data-background="images/news/7.jpg">
+                            <div class="content">
+                                <div class="info">
+                                    <a href="blog.html"> <span><i class="ti-time" aria-hidden="true"></i>10 Jul
+                                            2024</span></a>
+                                </div>
+                                <a href="post.html">
+                                    <h5>Há bons motivos para visitar Amarante.</h5>
+                                </a>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum felis. Nam
+                                    eleifend ultricies metus, sed
+                                    consectetur lectus dapibus porttitor.</p>
+                                <div class="arrow"> <a href="post.html"><span class="ti-arrow-right"></span></a> </div>
+                            </div>
+                        </div>
+                        <div class="item bg-img" data-background="images/news/3.jpg">
+                            <div class="content">
+                                <div class="info">
+                                    <a href="blog.html"> <span><i class="ti-time" aria-hidden="true"></i>8 Jul
+                                            2024</span></a>
+                                </div>
+                                <a href="post.html">
+                                    <h5>Já pode reservar as suas férias em Setubal.</h5>
+                                </a>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum felis. Nam
+                                    eleifend ultricies metus, sed
+                                    consectetur lectus dapibus porttitor.</p>
+                                <div class="arrow"> <a href="post.html"><span class="ti-arrow-right"></span></a> </div>
+                            </div>
+                        </div>
+                        <div class="item bg-img" data-background="images/news/9.jpg">
+                            <div class="content">
+                                <div class="info">
+                                    <a href="blog.html"> <span><i class="ti-time" aria-hidden="true"></i>7 Jul
+                                            2024</span></a>
+                                </div>
+                                <a href="post.html">
+                                    <h5>Nova piscina de água salgada.</h5>
+                                </a>
+                                <p>NLorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum felis.
+                                    Nam eleifend ultricies metus, sed
+                                    consectetur lectus dapibus porttitor.</p>
+                                <div class="arrow"> <a href="post.html"><span class="ti-arrow-right"></span></a> </div>
+                            </div>
+                        </div>
+                        <div class="item bg-img" data-background="images/news/8.jpg">
+                            <div class="content">
+                                <div class="info">
+                                    <a href="blog.html"> <span><i class="ti-time" aria-hidden="true"></i>29 Jun
+                                            2024</span></a>
+                                </div>
+                                <a href="post.html">
+                                    <h5>Fim de obras na Cercal! Reserva já a propriedade.</h5>
+                                </a>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum felis. Nam
+                                    eleifend ultricies metus, sed
+                                    consectetur lectus dapibus porttitor.</p>
+                                <div class="arrow"> <a href="post.html"><span class="ti-arrow-right"></span></a> </div>
+                            </div>
+                        </div>
+                        <div class="item bg-img" data-background="images/news/2.jpg">
+                            <div class="content">
+                                <div class="info">
+                                    <a href="blog.html"> <span><i class="ti-time" aria-hidden="true"></i>25 Jun
+                                            2024</span></a>
+                                </div>
+                                <a href="post.html">
+                                    <h5>Mês de Julho cheio em Setubal.</h5>
+                                </a>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum felis. Nam
+                                    eleifend ultricies metus, sed
+                                    consectetur lectus dapibus porttitor.</p>
+                                <div class="arrow"> <a href="post.html"><span class="ti-arrow-right"></span></a> </div>
+                            </div>
+                        </div>
+                        <div class="item bg-img" data-background="images/news/5.jpg">
+                            <div class="content">
+                                <div class="info">
+                                    <a href="blog.html"> <span><i class="ti-time" aria-hidden="true"></i>22 Jun
+                                            2024</span></a>
+                                </div>
+                                <a href="post.html">
+                                    <h5>Porquê ir para o Algarve quando tem Porto Côvo.</h5>
+                                </a>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum felis. Nam
+                                    eleifend ultricies metus, sed
+                                    consectetur lectus dapibus porttitor.</p>
+                                <div class="arrow"> <a href="post.html"><span class="ti-arrow-right"></span></a> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact -->
+    <section id="contact" class="contact section-padding" data-scroll-index="6">
+        <div class="container">
+            <div class="row mb-30">
+                <div class="col-md-3">
+                    <div class="sub-title border-bot-light">Contactos</div>
+                </div>
+                <div class="col-md-9">
+                    <div class="section-title">Contacte-nos</div>
+                    <p class="mb-30">Aenean commodo fringilla feugiat. Vestibulum sed ipsum et tortor rhoncus vehicula
+                        eu eget felis. Aliquam erat volutpat.
+                        Pellentesque lobortis, urna ut semper accumsan, odio eros rhoncus arcu, eget fringilla tortor
+                        magna nec velit.</p>
+                    <div class="row mb-30">
+                        <div class="col-lg-4 col-md-12">
+                            <div class="reservations mb-15">
+                                <div class="icon"><span class="flaticon-call"></span></div>
+                                <div class="text">
+                                    <p>Reservas</p> <a href="tel:855-100-4444">933 333 333</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="reservations mb-15">
+                                <div class="icon"><span class="flaticon-envelope"></span></div>
+                                <div class="text">
+                                    <p>Email Info</p> <a href="mailto:temp@temporario.com">temp@temporario.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="reservations mb-15">
+                                <div class="icon"><span class="flaticon-location-pin"></span></div>
+                                <div class="text">
+                                    <p>Morada</p> Av. Brasília, Lisboa
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3>Envie-nos um e-mail</h3>
+                                    <form method="post" class="contact__form" action="mail.php">
+
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="alert alert-success contact__msg" style="display: none"
+                                                    role="alert"> Mensagem enviada com sucesso. </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6 form-group">
+                                                <input name="name" type="text" placeholder="Nome *" required="">
+                                            </div>
+                                            <div class="col-md-6 form-group">
+                                                <input name="email" type="email" placeholder="Email *" required="">
+                                            </div>
+                                            <div class="col-md-6 form-group">
+                                                <input name="phone" type="text" placeholder="Número *" required="">
+                                            </div>
+                                            <div class="col-md-6 form-group">
+                                                <input name="subject" type="text" placeholder="Assunto *" required="">
+                                            </div>
+                                            <div class="col-md-12 form-group">
+                                                <textarea name="message" id="message" cols="30" rows="4"
+                                                    placeholder="Mensagem *" required=""></textarea>
+                                            </div>
+                                            <div class="col-md-12 mt-10">
+                                                <button type="submit" class="butn-dark2"><span>Enviar
+                                                        mensagem</span></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 mb-30">
+                        <div class="sub-title border-footer-light whte">Entre em contacto!</div>
+                    </div>
+                    <div class="col-md-4 offset-md-1">
+                        <div class="item">
+                            <h3>Contactos</h3>
+                            <p>Av. Brasília, 1400-038 Lisboa
+                                <br>Portugal.
+                            </p>
+                            <p class="phone">+351 933 333 333</p>
+                            <p class="mail">temp@temporario.com</p>
+                            <div class="social mt-2"> <a href="index.html"><i class="ti-twitter"></i></a> <a
+                                    href="index.html"><i class="ti-instagram"></i></a> <a href="index.html"><i
+                                        class="ti-linkedin"></i></a> </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="item">
+                            <h3>Casas & Apartamentos</h3>
+                            <ul class="footer-explore-list list-unstyled">
+                                <li><a href="rooms.html">Ecletic Monte Laginha</a></li>
+                                <li><a href="rooms.html">Casa de praia Vitoriana</a></li>
+                                <li><a href="rooms.html">Casa de praia Alentejana</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <p>© 2024 Fugir para Sul. All right reserved.</p>
+                    </div>
+                    <div class="col-lg-8 col-md-6">
+                        <p class="right"><a href="#">Terms &amp; Conditions</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/jquery-migrate-3.0.0.min.js"></script>
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/jquery.isotope.v3.0.2.js"></script>
+    <script src="js/pace.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scrollIt.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/jquery.magnific-popup.js"></script>
+    <script src="js/YouTubePopUp.js"></script>
+    <script src="js/select2.js"></script>
+    <script src="js/datepicker.js"></script>
+    <script src="js/smooth-scroll.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+
+</html>
