@@ -892,3 +892,25 @@ function getDistance(lat1, lng1, lat2, lng2) {
 function deg2rad(deg) {
 	return deg * (Math.PI / 180);
 }
+
+// Caroussel
+document.addEventListener("DOMContentLoaded", (event) => {
+	const carouselSlide = document.querySelector(".carousel-slide");
+	const carouselImages = document.querySelectorAll(".carousel-slide img");
+	const imageCount = carouselImages.length;
+	const imageWidth = carouselImages[0].clientWidth;
+	let counter = 0;
+
+	function nextSlide() {
+		counter++;
+		if (counter >= imageCount) {
+			counter = 0;
+		}
+		carouselSlide.style.transition = "transform 2s ease-in-out";
+		carouselSlide.style.transform = `translateX(${-imageWidth * counter}px)`;
+
+		setTimeout(nextSlide, 8000); // Change image every 4 seconds
+	}
+
+	nextSlide();
+});
