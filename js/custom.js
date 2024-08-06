@@ -914,3 +914,30 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 	nextSlide();
 });
+
+// Language Selector
+
+document.addEventListener("DOMContentLoaded", () => {
+	// Function to update language
+	function updateLanguage(lang) {
+		// Hide all elements that do not match the selected language
+		document.querySelectorAll("[data-lang]").forEach((el) => {
+			el.style.display =
+				el.getAttribute("data-lang") === lang ? "block" : "none";
+		});
+	}
+
+	// Initialize to show Portuguese content by default
+	updateLanguage("pt");
+
+	// Event listeners for flags
+	document.getElementById("flag-en").addEventListener("click", (event) => {
+		event.preventDefault();
+		updateLanguage("en");
+	});
+
+	document.getElementById("flag-pt").addEventListener("click", (event) => {
+		event.preventDefault();
+		updateLanguage("pt");
+	});
+});

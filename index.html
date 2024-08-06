@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Fugir para Sul - Rota de fuga</title>
+    <title data-lang="pt">Fugir para Sul - Rota de fuga</title>
     <link rel="shortcut icon" href="images/logos/Logo Mark@3x.png">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&amp;family=Outfit:wght@300;400&amp;display=swap">
@@ -32,26 +32,70 @@
         <div class="fugir-wrap-inner">
             <nav class="fugir-menu">
                 <ul>
-                    <li><a href="#" data-scroll-nav="0">Inicio</a></li>
-                    <li><a href="#" data-scroll-nav="1">Sobre</a></li>
-                    <li><a href="#" data-scroll-nav="2">Casas</a></li>
-                    <li><a href="#" data-scroll-nav="3">Comodidades</a></li>
-                    <li><a href="#" data-scroll-nav="4">Serviços</a></li>
-                    <li><a href="#" data-scroll-nav="5">Noticias</a></li>
-                    <li><a href="#" data-scroll-nav="6">Contactos</a></li>
+                    <li>
+                        <a href="#" data-scroll-nav="0" class="menu-item" data-lang="en">Home</a>
+                        <a href="#" data-scroll-nav="0" class="menu-item" data-lang="pt"
+                            style="display:none;">Início</a>
+                    </li>
+                    <li>
+                        <a href="#" data-scroll-nav="1" class="menu-item" data-lang="en">About</a>
+                        <a href="#" data-scroll-nav="1" class="menu-item" data-lang="pt" style="display:none;">Sobre</a>
+                    </li>
+                    <li>
+                        <a href="#" data-scroll-nav="2" class="menu-item" data-lang="en">Houses</a>
+                        <a href="#" data-scroll-nav="2" class="menu-item" data-lang="pt" style="display:none;">Casas</a>
+                    </li>
+                    <li>
+                        <a href="#" data-scroll-nav="3" class="menu-item" data-lang="en">Amenities</a>
+                        <a href="#" data-scroll-nav="3" class="menu-item" data-lang="pt"
+                            style="display:none;">Comodidades</a>
+                    </li>
+                    <li>
+                        <a href="#" data-scroll-nav="4" class="menu-item" data-lang="en">Services</a>
+                        <a href="#" data-scroll-nav="4" class="menu-item" data-lang="pt"
+                            style="display:none;">Serviços</a>
+                    </li>
+                    <li>
+                        <a href="#" data-scroll-nav="5" class="menu-item" data-lang="en">News</a>
+                        <a href="#" data-scroll-nav="5" class="menu-item" data-lang="pt"
+                            style="display:none;">Notícias</a>
+                    </li>
+                    <li>
+                        <a href="#" data-scroll-nav="6" class="menu-item" data-lang="en">Contacts</a>
+                        <a href="#" data-scroll-nav="6" class="menu-item" data-lang="pt"
+                            style="display:none;">Contactos</a>
+                    </li>
                 </ul>
             </nav>
             <div class="fugir-menu-footer">
                 <div class="reservation">
-                    <a href="tel:8551004444">
+                    <a href="tel:933333333">
                         <div class="icon d-flex justify-content-center align-items-center">
                             <i class="flaticon-call"></i>
                         </div>
-                        <div class="call">Reservas<br><span>933 333 333</span></div>
+                        <div class="call" data-lang="en">Reservations<br><span>933 333 333</span></div>
+                        <div class="call" data-lang="pt" style="display:none;">Reservas<br><span>933 333 333</span>
+                        </div>
                     </a>
                 </div>
             </div>
+            <div>
+                <!-- Language Selector with Flags -->
+                <span id="language_label">
+                    <span data-lang="en">Language:</span>
+                    <span data-lang="pt" style="display:none;">Idioma:</span>
+                </span>
+                <a href="#" id="flag-en">
+                    <img src="https://cdn1.iconfinder.com/data/icons/flags_gosquared/24/United-Kingdom.png"
+                        alt="English" />
+                </a>
+                <a href="#" id="flag-pt">
+                    <img src="https://cdn1.iconfinder.com/data/icons/flags_gosquared/24/Portugal.png"
+                        alt="Portuguese" />
+                </a>
+            </div>
         </div>
+    </div>
     </div>
     <!-- Logo & Menu Burger -->
     <div class="fugir-header">
@@ -75,17 +119,19 @@
         data-scroll-index="0">
         <div class="carousel-container">
             <div class="carousel-slide">
-                <img src="images/setubalpng.png" alt="Image 2">
-                <img src="images/cercalpng.png" alt="Image 1">
-                <img src="images/alentejopng.png" alt="Image 3">
-                <img src="images/setubalpng.png" alt="Image 2">
-                <img src="images/cercalpng.png" alt="Image 1">
-                <img src="images/alentejopng.png" alt="Image 3">
+                <img src="images/estrada1.png" alt="Estrada 1">
+                <img src="images/estrada2.png" alt="Estrada 2">
+                <img src="images/estrada3.png" alt="Estrada 3">
+                <img src="images/estrada4.png" alt="Estrada 4">
+                <img src="images/estrada1.png" alt="Estrada 1">
+                <img src="images/estrada2.png" alt="Estrada 2">
+                <img src="images/estrada3.png" alt="Estrada 3">
+                <img src="images/estrada4.png" alt="Estrada 4">
             </div>
         </div>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8 col-md-12 text-center">
+                <div class="col-lg-10 col-md-12 text-center">
                     <span>
                         <i class="star-rating"></i>
                         <i class="star-rating"></i>
@@ -94,13 +140,20 @@
                         <i class="star-rating"></i>
                     </span>
                     <h4>Fugir para Sul</h4>
-                    <h1>Uma rota de fuga para te encontrares</h1>
-                    <div class="butn-light mt-30 mb-30"> <a href="#about"><span>Explorar Mais</span></a> </div>
+                    <h1 class="responsive-h1" data-lang="pt">Sem ressentimentos para com o Norte, mas nós estamos
+                        apaixonados pelo Sul, selvagem e intemporal.</h1>
+                    <h1 class="responsive-h1" style="display:none;" data-lang="en">No hard feelings for the North but we
+                        are in love with the wild and timeless South</h1>
+                    <div class="butn-light mt-30 mb-30" data-lang="en">
+                        <a href="#about"><span>Explore More</span></a>
+                    </div>
+                    <div class="butn-light mt-30 mb-30" data-lang="pt" style="display:none;">
+                        <a href="#about"><span>Explorar Mais</span></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- Booking Search -->
     <div class="booking-wrapper">
         <div class="container">
@@ -108,23 +161,43 @@
                 <form action="#" class="form1 clearfix">
                     <div class="col1 c1">
                         <div class="input1_wrapper border-l border-b border-t border-r">
-                            <label>Check in</label>
                             <div class="input1_inner">
-                                <input type="text" class="form-control input datepicker" placeholder="Check in">
+                                <input type="text" class="form-control input datepicker"
+                                    placeholder="Quando queres fugir?" data-lang="pt" style="display: none;">
+                                <input type="text" class="form-control input datepicker"
+                                    placeholder="When do you want to run away?" data-lang="en">
                             </div>
                         </div>
                     </div>
                     <div class="col1 c2">
                         <div class="input1_wrapper border-l border-b border-t border-r">
-                            <label>Check out</label>
                             <div class="input1_inner">
-                                <input type="text" class="form-control input datepicker" placeholder="Check out">
+                                <input type="text" class="form-control input datepicker" placeholder="Pensas voltar?"
+                                    data-lang="pt" style="display: none;">
+                                <input type="text" class="form-control input datepicker"
+                                    placeholder="Are you planning to come back?" data-lang="en">
                             </div>
                         </div>
                     </div>
+
+                    <!-- Number of adults -->
                     <div class="col2 c3">
-                        <div class="select1_wrapper border-l border-b border-t border-r">
-                            <label>Adultos</label>
+                        <!-- English Select (hidden initially) -->
+                        <div class="select1_wrapper border-l border-b border-t border-r" data-lang="en"
+                            style="display: none;">
+                            <div class="select1_inner">
+                                <select class="select2 select" style="width: 100%">
+                                    <option value="1">1 Adult</option>
+                                    <option value="2">2 Adults</option>
+                                    <option value="3">3 Adults</option>
+                                    <option value="4">4 Adults</option>
+                                    <option value="5">5 Adults</option>
+                                    <option value="6">6 Adults</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Portuguese Select (visible initially) -->
+                        <div class="select1_wrapper border-l border-b border-t border-r" data-lang="pt">
                             <div class="select1_inner">
                                 <select class="select2 select" style="width: 100%">
                                     <option value="1">1 Adulto</option>
@@ -137,9 +210,12 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Number of kids -->
                     <div class="col2 c4">
-                        <div class="select1_wrapper border-l border-b border-t  border-r">
-                            <label>Crianças</label>
+                        <!-- English Select (hidden initially) -->
+                        <div class="select1_wrapper border-l border-b border-t border-r" data-lang="pt"
+                            style="display: none;">
                             <div class="select1_inner">
                                 <select class="select2 select" style="width: 100%">
                                     <option value="1">S/ Crianças</option>
@@ -149,6 +225,20 @@
                                     <option value="4">4 Crianças</option>
                                     <option value="5">5 Crianças</option>
                                     <option value="6">6 Crianças</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Portuguese Select (visible initially) -->
+                        <div class="select1_wrapper border-l border-b border-t border-r" data-lang="en">
+                            <div class="select1_inner">
+                                <select class="select2 select" style="width: 100%">
+                                    <option value="1">No Children</option>
+                                    <option value="1">1 Kid</option>
+                                    <option value="2">2 Kids</option>
+                                    <option value="3">3 Kids</option>
+                                    <option value="4">4 Kids</option>
+                                    <option value="5">5 Kids</option>
+                                    <option value="6">6 Kids</option>
                                 </select>
                             </div>
                         </div>
@@ -165,7 +255,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col3 c6">
+                    <div class="col3 c6" data-lang="pt" style="display: none;">
+                        <button type="submit" class="btn-form1-submit">Reservar</button>
+                    </div>
+                    <div class="col3 c6" data-lang="en">
                         <button type="submit" class="btn-form1-submit">Check Now</button>
                     </div>
                 </form>
@@ -177,30 +270,44 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <div class="sub-title border-bot-light">Bem-vindo</div>
+                    <div class="sub-title border-bot-light" data-lang="pt" style="display: none;">Bem-vindo</div>
+                    <div class="sub-title border-bot-light" data-lang="en">Welcome</div>
                 </div>
                 <div class="col-md-9">
                     <div class="section-title">Fugir para Sul</div>
                     <div class="row">
                         <div class="col-lg-6 col-md-12">
-                            <p>Fugir para Sul offers a route towards South
-                                in 4 different destinations & 4 different
-                                homes.</p>
-                            <p>All accommodations are designed
-                                with personality and taste, set in premium
-                                locations and easily accessible.</p>
-                            <p>Fugir para
-                                Sul designed them so that their guests
-                                would “feel at home straight away”, including
-                                details that are part of the life of the
-                                homeowners</p>
+                            <p data-lang="pt" style="display: none;">Fugir para Sul oferece uma rota em direção ao Sul
+                                em 4 destinos e em 4 casas diferentes.
+                            </p>
+                            <p data-lang="en">Fugir para Sul offers a route towards South in 4 different destinations &
+                                4 different homes.
+                            </p>
+
+                            <p data-lang="pt" style="display: none;">Todos os alojamentos são
+                                concebidos com personalidade e bom gosto, situados em locais privilegiados e de fácil
+                                acesso.
+                            </p>
+                            <p data-lang="en">All accommodations are designed with personality and taste, set in premium
+                                locations and easily accessible.
+                            </p>
+
+                            <p data-lang="pt" style="display: none;">A Fugir para Sul desenhou-os para que os seus
+                                hóspedes se “sintam imediatamente em casa”,
+                                incluindo pormenores que fazem
+                                parte da vida dos seus proprietários.</p>
+                            <p data-lang="en">Fugir para Sul designed them so that their guests would “feel at home
+                                straight away”, including details that are part of
+                                the life of the homeowners.
+                            </p>
                             <!-- Rating -->
                             <div class="ratting-point mt-30 mb-30">
                                 <div class="features-ratting">
-                                    <h3>4.81</h3>
+                                    <h3>4.8</h3>
                                 </div>
                                 <div class="features-caption">
-                                    <h3>Rating baseado nos 150+ reviews</h3>
+                                    <h3 data-lang="pt" style="display: none;">Rating baseado em mais de 150 reviews</h3>
+                                    <h3 data-lang="en">Rating based on 150+ reviews</h3>
                                     <div class="rating"> <span>
                                             <i class="star-rating"></i>
                                             <i class="star-rating"></i>
@@ -233,7 +340,7 @@
             </div>
         </div>
     </section>
-    <!-- Rooms -->
+    <!-- Rooms Setubal -->
     <section id="rooms" class="rooms1 section-padding" data-scroll-index="2">
         <div class="container">
             <div class="row mb-30">
@@ -250,7 +357,7 @@
                 </div>
             </div>
             <div class="rooms1-carousel owl-theme owl-carousel">
-                <!-- Cercal do Alentejo -->
+
                 <div class="rooms1-single" data-lat="37.833" data-lng="-8.670">
                     <div class="rooms1-img"> <img src="images/cercalpng.png" alt=""> </div>
                     <div class="rooms1-content">
@@ -268,7 +375,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Setúbal -->
+
                 <div class="rooms1-single" data-lat="38.524" data-lng="-8.892">
                     <div class="rooms1-img"> <img src="images/setubalpng.png" alt=""> </div>
                     <div class="rooms1-content">
@@ -286,7 +393,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Sines -->
+
                 <div class="rooms1-single" data-lat="37.960" data-lng="-8.868">
                     <div class="rooms1-img"> <img src="images/alentejopng.png" alt=""> </div>
                     <div class="rooms1-content">
@@ -307,6 +414,79 @@
             </div>
         </div>
     </section>
+    <!-- <section id="rooms" class="rooms1 section-padding" data-scroll-index="2">
+        <div class="container">
+            <div class="row mb-30">
+                <div class="col-md-3">
+                    <div class="sub-title border-bot-light">Descobrir</div>
+                </div>
+                <div class="col-md-9">
+                    <div class="section-title">Casas <span>&amp;</span> Apartamentos</div>
+                    <p>Fugir para Sul provides a journey to the South with four distinct destinations and four unique
+                        homes. Each accommodation
+                        is thoughtfully designed with character and style, situated in prime locations and easily
+                        reachable. </p>
+                    <button onclick="findClosestHouse()">Find the Closest House</button>
+                </div>
+            </div>
+            <div class="rooms1-carousel owl-theme owl-carousel">
+                
+                <div class="rooms1-single" data-lat="37.833" data-lng="-8.670">
+                    <div class="rooms1-img"> <img src="images/cercalpng.png" alt=""> </div>
+                    <div class="rooms1-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="rooms1-title"><a href="#">Ecletic Monte Laginha</a></div>
+                                <div class="rooms1-tagline">Cercal do Alentejo</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="book">
+                                    <div><a href="room-details.html" class="butn-dark2"><span>Reserve</span></a></div>
+                                    <div><span>desde</span><span class="price">202€</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rooms1-single" data-lat="38.524" data-lng="-8.892">
+                    <div class="rooms1-img"> <img src="images/setubalpng.png" alt=""> </div>
+                    <div class="rooms1-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="rooms1-title"><a href="#">Casa de Praia Vitoriana</a></div>
+                                <div class="rooms1-tagline">Setúbal</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="book">
+                                    <div><a href="room-details.html" class="butn-dark2"><span>Reserve</span></a></div>
+                                    <div><span>desde</span><span class="price">190€</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rooms1-single" data-lat="37.960" data-lng="-8.868">
+                    <div class="rooms1-img"> <img src="images/alentejopng.png" alt=""> </div>
+                    <div class="rooms1-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="rooms1-title"><a href="#">Casa de Praia Alentejana</a></div>
+                                <div class="rooms1-tagline">Sines</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="book">
+                                    <div><a href="room-details.html" class="butn-dark2"><span>Reserve</span></a></div>
+                                    <div><span>desde</span><span class="price">175€</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
     <!-- Promo Video -->
     <section class="video-wrapper video section-padding bg-img bg-fixed" data-overlay-dark="5"
         data-background="images/setubalpng.png">
@@ -507,17 +687,18 @@
                 <form action="#" class="form1 clearfix">
                     <div class="col1 c1">
                         <div class="input1_wrapper border-l border-b border-t border-r">
-                            <label>Check in</label>
+                            <label>Quando queres fugir?</label>
                             <div class="input1_inner">
-                                <input type="text" class="form-control input datepicker" placeholder="Check in">
+                                <input type="text" class="form-control input datepicker"
+                                    placeholder="Quando queres fugir?">
                             </div>
                         </div>
                     </div>
                     <div class="col1 c2">
                         <div class="input1_wrapper border-l border-b border-t border-r">
-                            <label>Check out</label>
+                            <label>Pensas voltar?</label>
                             <div class="input1_inner">
-                                <input type="text" class="form-control input datepicker" placeholder="Check out">
+                                <input type="text" class="form-control input datepicker" placeholder="Pensas voltar?">
                             </div>
                         </div>
                     </div>
