@@ -65,10 +65,7 @@ $(function () {
 		if (st < 150) {
 			if (navbar.hasClass("scrolled")) {
 				navbar.removeClass("scrolled sleep");
-				logo.attr(
-					"src",
-					"images/logos/PNG - OTHER VERSION OF COLOR/HORIZONTAL LOGO/Horizontal logo - white color@3x.png"
-				);
+				logo.attr("src", "");
 			}
 		}
 		if (st > 350) {
@@ -939,5 +936,78 @@ document.addEventListener("DOMContentLoaded", () => {
 	document.getElementById("flag-pt").addEventListener("click", (event) => {
 		event.preventDefault();
 		updateLanguage("pt");
+	});
+});
+
+// Image Slider
+
+const sliders = [
+	document.getElementById("slider1"),
+	document.getElementById("slider2"),
+];
+
+const imagesCount = [
+	sliders[0].getElementsByTagName("img").length,
+	sliders[1].getElementsByTagName("img").length,
+];
+
+let currentIndex = [0, 0]; // Track indices for both sliders
+
+function updateSlider(sliderIndex) {
+	const translateY = -currentIndex[sliderIndex] * 100; // Move up by 100% for each image
+	sliders[sliderIndex].style.transform = `translateY(${translateY}%)`;
+}
+
+document.getElementById("next").addEventListener("click", () => {
+	// Move to next image if not at the last image
+	if (currentIndex[0] < imagesCount[0] - 1) {
+		currentIndex[0] += 1; // Increment for first slider
+	}
+	if (currentIndex[1] < imagesCount[1] - 1) {
+		currentIndex[1] += 1; // Increment for second slider
+	}
+	updateSlider(0); // Update first slider
+	updateSlider(1); // Update second slider
+});
+
+document.getElementById("prev").addEventListener("click", () => {
+	// Move to previous image if not at the first image
+	if (currentIndex[0] > 0) {
+		currentIndex[0] -= 1; // Decrement for first slider
+	}
+	if (currentIndex[1] > 0) {
+		currentIndex[1] -= 1; // Decrement for second slider
+	}
+	updateSlider(0); // Update first slider
+	updateSlider(1); // Update second slider
+});
+
+// Details Text
+
+document.querySelectorAll("details").forEach((detail) => {
+	const content = detail.querySelector(".text-justify");
+
+	// Set detail to open on page load
+	detail.setAttribute("open", true);
+	content.style.maxHeight = content.scrollHeight + "px"; // Set maxHeight to content's full height on load
+
+	detail.addEventListener("toggle", function () {
+		if (detail.open) {
+			content.style.maxHeight = content.scrollHeight + "px"; // Set max-height to content's scroll height
+		} else {
+			content.style.maxHeight = content.scrollHeight + "px"; // Set maxHeight to current height (no change)
+
+			// Delay reducing height to 0 to trigger smooth closing animation
+			setTimeout(() => {
+				content.style.maxHeight = "0"; // Smoothly collapse by reducing max-height to 0
+			}, 10);
+		}
+	});
+
+	// Ensure content is fully collapsed initially when the page loads
+	detail.addEventListener("transitionend", (e) => {
+		if (!detail.open) {
+			content.style.maxHeight = "0"; // Reset height after closing is complete
+		}
 	});
 });
