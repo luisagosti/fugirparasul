@@ -1011,3 +1011,39 @@ document.querySelectorAll("details").forEach((detail) => {
 		}
 	});
 });
+
+$(document).ready(function () {
+	var $carousel = $("#testimonial-carousel");
+	var $bg = $("#testimonial-bg");
+
+	$carousel.owlCarousel({
+		loop: true,
+		margin: 30,
+		nav: false,
+		dots: false,
+		items: 1,
+		smartSpeed: 800,
+	});
+
+	// Navigation buttons
+	$("#prev-testimonial").on("click", function () {
+		$carousel.trigger("prev.owl.carousel");
+	});
+
+	$("#next-testimonial").on("click", function () {
+		$carousel.trigger("next.owl.carousel");
+	});
+
+	// Sync background on init & change
+	function syncBackground(event) {
+		var index = event.item.index;
+		var $item = $(event.target).find(".owl-item").eq(index).find(".item");
+		var bg = $item.data("bg");
+		if (bg) {
+			$bg.css("background-image", "url(" + bg + ")");
+		}
+	}
+
+	$carousel.on("changed.owl.carousel", syncBackground);
+	$carousel.on("initialized.owl.carousel", syncBackground);
+});
