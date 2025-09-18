@@ -591,7 +591,7 @@ $(function () {
 			// On-page links
 			if (
 				location.pathname.replace(/^\//, "") ==
-					this.pathname.replace(/^\//, "") &&
+				this.pathname.replace(/^\//, "") &&
 				location.hostname == this.hostname
 			) {
 				// Figure out element to scroll to
@@ -879,9 +879,9 @@ function getDistance(lat1, lng1, lat2, lng2) {
 	const a =
 		Math.sin(dLat / 2) * Math.sin(dLat / 2) +
 		Math.cos(deg2rad(lat1)) *
-			Math.cos(deg2rad(lat2)) *
-			Math.sin(dLng / 2) *
-			Math.sin(dLng / 2);
+		Math.cos(deg2rad(lat2)) *
+		Math.sin(dLng / 2) *
+		Math.sin(dLng / 2);
 	const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 	return R * c;
 }
@@ -937,49 +937,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		event.preventDefault();
 		updateLanguage("pt");
 	});
-});
-
-// Image Slider
-
-const sliders = [
-	document.getElementById("slider1"),
-	document.getElementById("slider2"),
-];
-
-const imagesCount = [
-	sliders[0].getElementsByTagName("img").length,
-	sliders[1].getElementsByTagName("img").length,
-];
-
-let currentIndex = [0, 0]; // Track indices for both sliders
-
-function updateSlider(sliderIndex) {
-	const translateY = -currentIndex[sliderIndex] * 100; // Move up by 100% for each image
-	sliders[sliderIndex].style.transform = `translateY(${translateY}%)`;
-}
-
-document.getElementById("next").addEventListener("click", () => {
-	// Move to next image if not at the last image
-	if (currentIndex[0] < imagesCount[0] - 1) {
-		currentIndex[0] += 1; // Increment for first slider
-	}
-	if (currentIndex[1] < imagesCount[1] - 1) {
-		currentIndex[1] += 1; // Increment for second slider
-	}
-	updateSlider(0); // Update first slider
-	updateSlider(1); // Update second slider
-});
-
-document.getElementById("prev").addEventListener("click", () => {
-	// Move to previous image if not at the first image
-	if (currentIndex[0] > 0) {
-		currentIndex[0] -= 1; // Decrement for first slider
-	}
-	if (currentIndex[1] > 0) {
-		currentIndex[1] -= 1; // Decrement for second slider
-	}
-	updateSlider(0); // Update first slider
-	updateSlider(1); // Update second slider
 });
 
 // Details Text
@@ -1046,4 +1003,387 @@ $(document).ready(function () {
 
 	$carousel.on("changed.owl.carousel", syncBackground);
 	$carousel.on("initialized.owl.carousel", syncBackground);
+});
+
+// ============== redirectToAirbnb() ==============
+
+function redirectToAirbnb() {
+	// Detecta a linguagem ativa
+	const isPt = document.querySelector('[data-lang="pt"]:not([style*="display: none"])') !== null;
+
+	// Campos de data
+	const checkin = isPt
+		? document.getElementById('checkin-pt').value
+		: document.getElementById('checkin-en').value;
+	const checkout = isPt
+		? document.getElementById('checkout-pt').value
+		: document.getElementById('checkout-en').value;
+
+	// Adultos e Crianças
+	const adults = isPt
+		? document.getElementById('adults-pt').value
+		: document.getElementById('adults-en').value;
+	const children = isPt
+		? document.getElementById('kids-pt').value
+		: document.getElementById('kids-en').value;
+
+	// Casa selecionada
+	const house = document.getElementById('house').value;
+
+	// Mapeamento de URLs e share IDs
+	const houseData = {
+		"1": {
+			url: "https://www.airbnb.pt/rooms/36367734",
+			shareId: "08d6c901-17e7-4d17-b7ae-079f6b6034c1"
+		},
+		"2": {
+			url: "https://www.airbnb.pt/rooms/2262342",
+			shareId: "0f921361-7dee-4b8e-a59a-d02b990dada3"
+		},
+		"3": {
+			url: "https://www.airbnb.pt/rooms/862629523957211348",
+			shareId: "d404d274-1653-4979-bf84-502c418624ba"
+		}
+	};
+
+	// Função de formatação de data
+	function formatDate(input) {
+		const date = new Date(input);
+		if (isNaN(date)) return "";
+		const yyyy = date.getFullYear();
+		const mm = String(date.getMonth() + 1).padStart(2, '0');
+		const dd = String(date.getDate()).padStart(2, '0');
+		return `${yyyy}-${mm}-${dd}`;
+	}
+
+	const check_in = formatDate(checkin);
+	const check_out = formatDate(checkout);
+
+	if (!check_in || !check_out || !adults || !children) {
+		alert("Por favor, preencha todas as informações.");
+		return;
+	}
+
+	const totalGuests = parseInt(adults) + parseInt(children);
+
+	const houseInfo = houseData[house];
+	if (!houseInfo) {
+		alert("Casa inválida.");
+		return;
+	}
+
+	const finalUrl = `${houseInfo.url}?adults=${adults}` +
+		`&children=${children}` +
+		`&check_in=${check_in}` +
+		`&check_out=${check_out}` +
+		`&guests=${totalGuests}` +
+		`&s=67` +
+		`&unique_share_id=${houseInfo.shareId}`;
+
+	console.log(finalUrl, "_blank");
+	window.open(finalUrl, "_blank");
+
+}
+
+// ============== Mapa ==============
+
+let currentRegion = 0;
+const totalRegions = 3;
+let currentLang = 'pt'; // default language
+const testimonialIndices = [0, 0, 0]; // one per region
+
+
+// Define positions for the red dot (relative to map container)
+const dotPositions = [
+	{ top: '44%', left: '37%' }, // North
+	{ top: '75%', left: '41%' }, // Center
+	{ top: '77%', left: '50%' }  // South
+];
+
+// Function to update amenities section if it exists
+function updateAmenities(regionIndex) {
+	const amenitiesSection = document.getElementById('amenities');
+	if (amenitiesSection) {
+		// Update amenities content sections using inline styles
+		for (let i = 0; i < totalRegions; i++) {
+			const amenityContent = document.querySelector(`#amenities #content-${i}`);
+			const regionCarousel = document.querySelector(`.region-amenities[data-region="${i}"]`);
+
+			if (amenityContent) {
+				amenityContent.style.opacity = '0';
+				amenityContent.style.display = 'none';
+			}
+			if (regionCarousel) {
+				regionCarousel.classList.remove('active');
+			}
+		}
+
+		// Show active content and carousel
+		const activeAmenityContent = document.querySelector(`#amenities #content-${regionIndex}`);
+		const activeCarousel = document.querySelector(`.region-amenities[data-region="${regionIndex}"]`);
+
+		if (activeAmenityContent) {
+			activeAmenityContent.style.opacity = '1';
+			activeAmenityContent.style.display = 'block';
+		}
+		if (activeCarousel) {
+			activeCarousel.classList.add('active');
+		}
+	}
+}
+
+function switchLanguage(lang) {
+	currentLang = lang;
+
+	// Toggle all elements with data-lang
+	document.querySelectorAll('[data-lang]').forEach(el => {
+		if (el.getAttribute('data-lang') === lang) {
+			el.style.display = '';
+		} else {
+			el.style.display = 'none';
+		}
+	});
+}
+
+// Function to update testimonials section if it exists
+function updateTestimonials(regionIndex) {
+	const testimonialsSection = document.getElementById('testimonial-section');
+	if (testimonialsSection) {
+		// Update testimonials content sections
+		for (let i = 0; i < totalRegions; i++) {
+			const testimonialContent = document.querySelector(`#testimonial-section #testimonial-content-${i}`);
+			const regionTestimonials = document.querySelector(`.region-testimonials[data-region="${i}"]`);
+
+			if (testimonialContent) {
+				testimonialContent.style.opacity = '0';
+				testimonialContent.style.display = 'none';
+			}
+			if (regionTestimonials) {
+				regionTestimonials.classList.remove('active');
+			}
+		}
+
+		// Show active content and testimonials
+		const activeTestimonialContent = document.querySelector(`#testimonial-section #testimonial-content-${regionIndex}`);
+		const activeTestimonials = document.querySelector(`.region-testimonials[data-region="${regionIndex}"]`);
+
+		if (activeTestimonialContent) {
+			activeTestimonialContent.style.opacity = '1';
+			activeTestimonialContent.style.display = 'block';
+		}
+		if (activeTestimonials) {
+			activeTestimonials.classList.add('active');
+
+			// Reset testimonial index and show first testimonial
+			currentTestimonialIndex = 0;
+			showTestimonial(activeTestimonials, 0);
+		}
+
+		// Update background image based on region
+		const backgroundImages = [
+			'images/setubalpng.png',  // Region 0
+			'images/alentejopng.png',  // Region 1
+			'images/cercalpng.png'   // Region 2 
+		];
+
+		const testimonialBg = document.getElementById('testimonial-bg');
+		if (testimonialBg && backgroundImages[regionIndex]) {
+			testimonialBg.style.backgroundImage = `url('${backgroundImages[regionIndex]}')`;
+		}
+	}
+}
+
+function updateContent(regionIndex) {
+	// Hide all content sections
+	for (let i = 0; i < totalRegions; i++) {
+		const contentEl = document.getElementById(`content-${i}`);
+		const imagesEl = document.getElementById(`images-${i}`);
+		if (contentEl) contentEl.classList.remove('active');
+		if (imagesEl) imagesEl.classList.remove('active');
+	}
+
+	// Show current region content
+	const activeContent = document.getElementById(`content-${regionIndex}`);
+	const activeImages = document.getElementById(`images-${regionIndex}`);
+	if (activeContent) activeContent.classList.add('active');
+	if (activeImages) activeImages.classList.add('active');
+
+	// Move the red dot
+	const redDot = document.getElementById('red-dot');
+	if (redDot && dotPositions[regionIndex]) {
+		redDot.style.top = dotPositions[regionIndex].top;
+		redDot.style.left = dotPositions[regionIndex].left;
+	}
+
+	// Update counter safely
+	const regionCounter = document.getElementById('region-counter');
+	if (regionCounter) regionCounter.textContent = regionIndex + 1;
+
+	// Update amenities and testimonials
+	updateAmenities(regionIndex);
+	updateTestimonials(regionIndex);
+}
+
+function navigateUp() {
+	currentRegion = (currentRegion - 1 + totalRegions) % totalRegions;
+	updateContent(currentRegion);
+}
+
+function navigateDown() {
+	currentRegion = (currentRegion + 1) % totalRegions;
+	updateContent(currentRegion);
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', function (e) {
+	if (e.key === 'ArrowUp') {
+		e.preventDefault();
+		navigateUp();
+	} else if (e.key === 'ArrowDown') {
+		e.preventDefault();
+		navigateDown();
+	}
+});
+
+// Button navigation
+document.getElementById('prev').addEventListener('click', navigateUp);
+document.getElementById('next').addEventListener('click', navigateDown);
+
+// Testimonial navigation - Simple approach
+let currentTestimonialIndex = 0;
+
+function updateTestimonialNavigation() {
+	const prevBtn = document.getElementById('prev-testimonial');
+	const nextBtn = document.getElementById('next-testimonial');
+
+	if (prevBtn) {
+		prevBtn.addEventListener('click', function () {
+			const activeRegion = document.querySelector('.region-testimonials.active');
+			if (activeRegion) {
+				const testimonialItems = activeRegion.querySelectorAll('.item');
+				if (testimonialItems.length > 0) {
+					currentTestimonialIndex = (currentTestimonialIndex - 1 + testimonialItems.length) % testimonialItems.length;
+					showTestimonial(activeRegion, currentTestimonialIndex);
+				}
+			}
+		});
+	}
+
+	if (nextBtn) {
+		nextBtn.addEventListener('click', function () {
+			const activeRegion = document.querySelector('.region-testimonials.active');
+			if (activeRegion) {
+				const testimonialItems = activeRegion.querySelectorAll('.item');
+				if (testimonialItems.length > 0) {
+					currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialItems.length;
+					showTestimonial(activeRegion, currentTestimonialIndex);
+				}
+			}
+		});
+	}
+}
+
+function showTestimonial(container, index) {
+	const items = container.querySelectorAll('.item');
+	items.forEach((item, i) => {
+		item.style.display = i === index ? 'block' : 'none';
+	});
+}
+
+// Initialize testimonial navigation when page loads
+document.addEventListener('DOMContentLoaded', function () {
+	updateTestimonialNavigation();
+
+	// Show first testimonial of active region
+	const activeRegion = document.querySelector('.region-testimonials.active');
+	if (activeRegion) {
+		showTestimonial(activeRegion, 0);
+	}
+});
+
+// Touch/swipe support for mobile - Updated to avoid carousel conflicts
+let touchStartY = 0;
+let touchEndY = 0;
+let touchTarget = null;
+
+document.addEventListener('touchstart', function (e) {
+	touchStartY = e.changedTouches[0].screenY;
+	touchTarget = e.target;
+});
+
+document.addEventListener('touchend', function (e) {
+	touchEndY = e.changedTouches[0].screenY;
+
+	// Only handle swipe if not touching carousel elements
+	const isCarouselTouch = touchTarget && (
+		touchTarget.closest('.owl-carousel') ||
+		touchTarget.closest('#amenities') ||
+		touchTarget.closest('.region-amenities')
+	);
+
+	if (!isCarouselTouch) {
+		handleSwipe();
+	}
+});
+
+function handleSwipe() {
+	const swipeThreshold = 50; // minimum distance for a swipe
+	const difference = touchStartY - touchEndY;
+
+	if (Math.abs(difference) > swipeThreshold) {
+		if (difference > 0) {
+			// Swiped up - go to next region
+			navigateDown();
+		} else {
+			// Swiped down - go to previous region
+			navigateUp();
+		}
+	}
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+	switchLanguage(currentLang);
+	updateTestimonialNavigation();
+	const activeRegion = document.querySelector('.region-testimonials.active');
+	if (activeRegion) showTestimonial(activeRegion, 0);
+});
+
+
+// Initialize
+updateContent(currentRegion);
+
+
+
+// ======== Send Email =========
+
+document.querySelector(".contact__form").addEventListener("submit", function (e) {
+	e.preventDefault();
+	let form = this;
+	let formData = new FormData(form);
+
+	fetch(form.action, {
+		method: "POST",
+		body: formData
+	})
+		.then(response => response.text())
+		.then(result => {
+			if (result.trim() === "success") {
+				let msg = document.querySelector(".contact__msg");
+				msg.classList.remove("hidden");
+				msg.classList.add("animate-fadeIn");
+
+				form.reset();
+
+				// esconder depois de 4s
+				setTimeout(() => {
+					msg.classList.add("hidden");
+					msg.classList.remove("animate-fadeIn");
+				}, 4000);
+			} else {
+				alert("Ocorreu um erro ao enviar. Tente novamente.");
+			}
+		})
+		.catch(() => {
+			alert("Erro de rede. Verifique a ligação.");
+		});
 });

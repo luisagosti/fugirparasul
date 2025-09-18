@@ -1,12 +1,12 @@
 (function () {
     'use strict';
-    
+
     // Preloader
-	$("#preloader").fadeOut(900);
-	$(".preloader-bg").delay(800).fadeOut(900);
-	var wind = $(window);
-    
-    
+    $("#preloader").fadeOut(900);
+    $(".preloader-bg").delay(800).fadeOut(900);
+    var wind = $(window);
+
+
     var isMobile = {
         Android: function () {
             return navigator.userAgent.match(/Android/i);
@@ -27,7 +27,7 @@
             return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
         }
     };
-    
+
     // Full Height
     var fullHeight = function () {
         if (!isMobile.any()) {
@@ -37,7 +37,7 @@
             });
         }
     };
-    
+
     // Animations
     var contentWayPoint = function () {
         var i = 0;
@@ -71,7 +71,7 @@
             offset: '85%'
         });
     };
-    
+
     // Burger Menu 
     var burgerMenu = function () {
         $('.js-duru-nav-toggle').on('click', function (event) {
@@ -106,9 +106,9 @@
         });
     };
 
-    
+
     // Progress-wrap
-     var progressPath = document.querySelector('.progress-wrap path');
+    var progressPath = document.querySelector('.progress-wrap path');
     var pathLength = progressPath.getTotalLength();
     progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
     progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
@@ -137,19 +137,19 @@
         jQuery('html, body').animate({ scrollTop: 0 }, duration);
         return false;
     })
-    
+
     // Button
     var buttons = document.querySelectorAll(".btn .box-wrap .box-img ol.comment-list li.comment .reply a");
-    for(var i = 0; i < buttons.length; i++) {
-      var button = buttons[i];
-      button.addEventListener("click", function() {
-        if(!button.classList.contains("active"))
-          button.classList.add("active");
-        else
-          button.classList.remove("active");
-      });
+    for (var i = 0; i < buttons.length; i++) {
+        var button = buttons[i];
+        button.addEventListener("click", function () {
+            if (!button.classList.contains("active"))
+                button.classList.add("active");
+            else
+                button.classList.remove("active");
+        });
     }
-    
+
     // Document on load.
     $(function () {
         fullHeight();

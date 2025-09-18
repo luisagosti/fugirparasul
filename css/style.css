@@ -1,56 +1,54 @@
 /* -------------------------------------------------------
 
-
- 01. Basics & Typography style
- 02. Helper style
- 03. Selection style 
- 04. Preloader style
- 05. Owl-Theme custom style
- 06. Section style
- 07. Navbar style
- 08. Header style
- 09. Slider-fade style (Homepage Slider)
- 10. Slider style (Inner Page Slider)
- 11. Kenburns Slider style
- 12. Page Banner Header style
- 13. Video Background style
- 14. About style
- 15. Team style
- 16. Rooms 1 style
- 17. Rooms 2 style
- 18. Rooms 3 style
- 19. Rooms 4 style
- 20. Rooms 5 style
- 21. Rooms Details 1 style
- 22. Rooms Details 2 style
- 23. Room Sidebar style
- 24. Amenities style
- 25. Gallery style
- 26. Banner Video style
- 27. Promo Video style
- 28. Testimonials style
- 29. Booking style
- 30. MenuBook style
- 31. Accordion Box (for Faqs) style
- 32. Accordion Menu style
- 33. Services style
- 34. Services 2 style
- 35. Services 3 style
- 36. Services 4 style
- 37. Pricing style
- 38. Home Blog style
- 39. Blog style
- 40. Post style
- 41. Contact style
- 42. Client style
- 43. Buttons style
- 44. Coming Soon
- 45. 404 Page style
- 46. Footer style
- 47. toTop Button style
- 48. Overlay Effect Bg image style
- 49. Responsive (Media Query)
- 
+    01. Basics & Typography style
+    02. Helper style
+    03. Selection style 
+    04. Preloader style
+    05. Owl-Theme custom style
+    06. Section style
+    07. Navbar style
+    08. Header style
+    09. Slider-fade style (Homepage Slider)
+    10. Slider style (Inner Page Slider)
+    11. Kenburns Slider style
+    12. Page Banner Header style
+    13. Video Background style
+    14. About style
+    15. Team style
+    16. Rooms 1 style
+    17. Rooms 2 style
+    18. Rooms 3 style
+    19. Rooms 4 style
+    20. Rooms 5 style
+    21. Rooms Details 1 style
+    22. Rooms Details 2 style
+    23. Room Sidebar style
+    24. Amenities style
+    25. Gallery style
+    26. Banner Video style
+    27. Promo Video style
+    28. Testimonials style
+    29. Booking style
+    30. MenuBook style
+    31. Accordion Box (for Faqs) style
+    32. Accordion Menu style
+    33. Services style
+    34. Services 2 style
+    35. Services 3 style
+    36. Services 4 style
+    37. Pricing style
+    38. Home Blog style
+    39. Blog style
+    40. Post style
+    41. Contact style
+    42. Client style
+    43. Buttons style
+    44. Coming Soon
+    45. 404 Page style
+    46. Footer style
+    47. toTop Button style
+    48. Overlay Effect Bg image style
+    49. Responsive (Media Query)
 
 ------------------------------------------------------- */
 
@@ -430,11 +428,9 @@ blockquote cite:before {
     opacity: 0;
 }
 :root { scroll-behavior: auto; }
-.owl-carousel .owl-nav button.owl-next, 
-.owl-carousel .owl-nav button.owl-prev, 
-.owl-carousel button.owl-dot {
-    outline: none;
-}
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel button.owl-dot {outline: none;}
 /* background & color */
 .bg-blck {
     background: #1b1b1b;
@@ -5007,8 +5003,6 @@ button.mfp-arrow {
     margin-top: 0px;
     font-size: 12px;
     text-align: right;
-	0
-	
 	margin-bottom: 5px;
 }
 .blog .post-cont .date a {
@@ -5749,7 +5743,7 @@ font-size: 15px;
     color: #fff;
 }
 .footer .bottom p a {
-   color: #fff;
+    color: #fff;
 }
 .footer .bottom p a:hover {
     color: #aa8453;
@@ -5762,19 +5756,19 @@ font-size: 15px;
 }
 /* footer list */
 .footer .list li + li {
-  margin-top: 3px;
+    margin-top: 3px;
 }
 .footer .list li a {
-  position: relative;
-  display: block;
-  font-size: 15px;
-  color: #fff;
-  -webkit-transition: all 500ms ease;
-  transition: all 500ms ease;
+    position: relative;
+    display: block;
+    font-size: 15px;
+    color: #fff;
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
 }
 .footer .list li a:hover {
   padding-left: 15px;
-  color: #aa8453);
+  color: #aa8453;
 }
 .footer .list li a:before {
   position: absolute;
@@ -6192,3 +6186,104 @@ details[open] summary .icon i {
     transform: rotate(90deg); /* Rotate icon when open */
 }
 
+/* ======= Mapa ======= */
+.map-container {
+    position: relative;
+    background-image: url('images/mapa/mapa.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.red-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #ef4444;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+@media (min-width: 640px) {
+    .red-dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .red-dot {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+.content-section {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.content-section.active {
+    opacity: 1;
+}
+
+.instruction-hint {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* ========= Amenities =========== */
+/* Amenities coordination styles - Scoped to avoid conflicts */
+#amenities .region-amenities {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none; 
+}
+
+#amenities .region-amenities.active {
+    opacity: 1;
+    pointer-events: auto; 
+}
+
+#amenities .carousel-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    overflow: visible;
+}
+
+/* ========= Testimonials =========== */
+/* Testimonials coordination styles - Scoped to avoid conflicts */
+#testimonial-section .region-testimonials {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+#testimonial-section .region-testimonials.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#testimonial-section .testimonials-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 180px;
+    overflow: visible;
+}
